@@ -1,0 +1,20 @@
+/* Estilo do fundo */
+body {
+  background-color: #d2d2d2; /* Branco */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  margin-top: 5px;
+  padding: 10px 20px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 1;
+}
