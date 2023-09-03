@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext'; // Importe o useAuth
+import { useAuth } from '../contexts/AuthContext';
 import './Login.css';
 
 const Login = () => {
@@ -9,7 +9,7 @@ const Login = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const navigate = useNavigate();
-  const { isLoggedIn, setIsLoggedIn } = useAuth(); // Use o contexto
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const isValidEmail = (email) => {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -30,7 +30,7 @@ const Login = () => {
 
     if (isValidEmail(email) && password.length >= 6) {
       // Simulação de autenticação
-      if (email === 'user@example.com' && password === 'senha123') {
+      if (email === 'teste@teste.com' && password === 'senha123') {
         setIsLoggedIn(true); // Atualize o estado de login usando o contexto
         navigate('/home');
       } else {
@@ -47,6 +47,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <img className="icon-medical" src={"./src/images/icon-doctor.png"} alt = "Prontuario Eletronico"/>
       <h2>Entrar no Sistema</h2>
       <input
         type="email"

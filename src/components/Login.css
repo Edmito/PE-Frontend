@@ -8,15 +8,22 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #e6f7ff; /* Azul claro */
-  width: 300px;
+  width: 320px;
   padding: 20px;
   margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.login-container img {
+  width: 140px;
+  height: 140px;
 }
 
 .login-container h2 {
   color: #007acc;
   position: relative;
+  padding: 20px;
 }
 
 .login-container input {
@@ -63,7 +70,7 @@ body {
   }
 }
 
-.footer {
+/*.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -72,4 +79,4 @@ body {
   padding: 5px 0;
   text-align: center;
   font-size: 12px;
-}
+}*/
