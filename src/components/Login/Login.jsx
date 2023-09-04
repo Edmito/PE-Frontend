@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import {useAuth} from '../../contexts/AuthContext';
 import './Login.css';
 
 const Login = () => {
@@ -46,7 +46,8 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login">
+      <div className="login-container">
       <img className="icon-medical" src={"./src/images/icon-doctor.png"} alt = "Prontuario Eletronico"/>
       <h2>Entrar no Sistema</h2>
       <input
@@ -66,6 +67,8 @@ const Login = () => {
       {passwordError && <p className="error-message">{passwordError}</p>}
       <button onClick={handleLogin}>Entrar</button>
     </div>
+    </div>
+    
   );
 };
 

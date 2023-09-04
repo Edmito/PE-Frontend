@@ -1,14 +1,7 @@
-/* Estilo do aplicativo */
-.app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
 /* Estilo responsivo */
 @media screen and (max-width: 768px) {
   .app {
     padding: 20px;
   }
 }
+

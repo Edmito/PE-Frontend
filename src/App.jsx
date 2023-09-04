@@ -5,7 +5,7 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import Home from './pages/Home';
 import { AuthProvider, useAuth } from './contexts/AuthContext'; // Certifique-se de importar o useAuth
 import './App.css';

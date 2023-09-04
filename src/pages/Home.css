@@ -1,20 +1,107 @@
-/* Estilo do fundo */
-body {
-  background-color: #d2d2d2; /* Branco */
-  font-family: Arial, Helvetica, sans-serif;
+/* Estilos do cabeçalho .home-container {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}*/
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-button {
-  margin-top: 5px;
+/* Estilos do cabeçalho */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0078d4; /* Cor de fundo do cabeçalho */
+  color: #fff; /* Cor do texto no cabeçalho */
   padding: 10px 20px;
-  background-color: #007acc;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  opacity: 0.7;
-  cursor: pointer;
 }
 
-button:hover {
-  opacity: 1;
+.title {
+  font-size: 24px;
+  font-weight: bold;
 }
+
+.logout-button {
+  background-color: #444;
+  border-radius: 1rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #111;
+}
+
+/* Estilos da navegação lateral */
+.content {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #0078ff;
+  width: 120px;
+  padding: 10px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list li {
+  margin-top: 2rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-list a:hover {
+  color: #0078d4; /* Cor de destaque no hover */
+}
+
+/* Estilos do conteúdo principal */
+.home {
+  flex: 2;
+  padding: 20px;
+}
+
+.home h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.home p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.home h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.home ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.home ul li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+
