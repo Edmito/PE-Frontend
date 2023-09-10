@@ -1,18 +1,24 @@
 import React from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import './Home.css'; // Certifique-se de importar o useAuth
+import UserServices from '../../services/UserService';
+import { useNavigate } from 'react-router-dom';
+import './Home.css';
+
 
 const Home = () => {
-  const { isLoggedIn, setIsLoggedIn } = useAuth(); // Use o contexto
+  const userService = new UserServices();
+  
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    setIsLoggedIn(false); // Marque o usuário como deslogado
+    userService.logout();
+    navigate('/login');
   };
 
   return (
     <div className="home-container">
       <header className="header">
         <div className="title">Prontuário Eletrônico</div>
+        <h1>Bem vindo {localStorage.getItem('name')}</h1>
         <button className="logout-button" onClick={handleLogout}>
           Sair
         </button>

@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {useAuth} from '../../contexts/AuthContext';
+import UserServices from '../../services/UserService';
 import './Login.css';
+
+const userServices = new UserServices();
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+
   const navigate = useNavigate();
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const isValidEmail = (email) => {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailPattern.test(email);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     setEmailError('');
     setPasswordError('');
 
@@ -28,13 +30,20 @@ const Login = () => {
       setPasswordError('A senha deve conter pelo menos 6 caracteres!');
     }
 
+    // Simulação de autenticação
     if (isValidEmail(email) && password.length >= 6) {
-      // Simulação de autenticação
-      if (email === 'teste@teste.com' && password === 'senha123') {
-        setIsLoggedIn(true); // Atualize o estado de login usando o contexto
-        navigate('/home');
-      } else {
-        setEmailError('Credenciais inválidas');
+      try {
+        const res = await userServices.login({ email, password });
+        console.log('response do Login', res);
+
+        if (res) {
+          navigate('/home');
+        } else {
+          setEmailError('Credenciais inválidas');
+        }
+      } catch (error) {
+        console.error('Erro de autenticação:', error);
+        setEmailError(error.response.data.error);
       }
     }
   };
@@ -48,27 +57,30 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-container">
-      <img className="icon-medical" src={"./src/images/icon-doctor.png"} alt = "Prontuario Eletronico"/>
-      <h2>Entrar no Sistema</h2>
-      <input
-        type="email"
-        placeholder="exemplo@email.com"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      {emailError && <p className="error-message">{emailError}</p>}
-      <input
-        type="password"
-        placeholder="Sua senha"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        onKeyUp={handleKeyPress}
-      />
-      {passwordError && <p className="error-message">{passwordError}</p>}
-      <button onClick={handleLogin}>Entrar</button>
+        <img
+          className="icon-medical"
+          src={'./src/images/icon/icon-doctor.png'}
+          alt="Prontuario Eletronico"
+        />
+        <h2>Entrar no Sistema</h2>
+        <input
+          type="email"
+          placeholder="exemplo@email.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {emailError && <p className="error-message">{emailError}</p>}
+        <input
+          type="password"
+          placeholder="Sua senha"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          onKeyUp={handleKeyPress}
+        />
+        {passwordError && <p className="error-message">{passwordError}</p>}
+        <button onClick={handleLogin}>Entrar</button>
+      </div>
     </div>
-    </div>
-    
   );
 };
 
