@@ -1,0 +1,29 @@
+/* Estilos para o Header */
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilos para tornar responsivo */
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 20px;
+  }
+}

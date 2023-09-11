@@ -1,0 +1,22 @@
+/* Estilos para o LogoutButton */
+.logout-button {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #ccc;
+}
+
+/* Estilos para tornar responsivo, se necessário */
+@media screen and (max-width: 768px) {
+  .logout-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

@@ -43,7 +43,11 @@ const Login = () => {
         }
       } catch (error) {
         console.error('Erro de autenticação:', error);
-        setEmailError(error.response.data.error);
+        if (error.response) {
+          setEmailError(error.response.data.error);
+        } else {
+          setEmailError('Erro Interno');
+        }
       }
     }
   };

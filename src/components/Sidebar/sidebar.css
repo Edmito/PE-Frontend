@@ -1,0 +1,64 @@
+/* Estilos para o Sidebar */
+.sidebar {
+  width: 240px;
+  top: 0;
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  background-color: darkblue;
+  overflow: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  transition: width 0.3s;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.minimized {
+  width: 72px;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+  width: 258px;
+}
+
+.nav-list li {
+  margin-bottom: 10px;
+  padding: 0px 24px 0px 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+/* Adicionando ícone ao link */
+.nav-list a svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* Estilos para tornar responsivo */
+@media screen and (max-width: 768px) {
+  .sidebar.minimized {
+    width: 72px;
+  }
+
+  .nav-list a svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}
