@@ -11,9 +11,9 @@ Antes de começar, certifique-se de ter o Node.js instalado em sua máquina. Voc
 1. Clone este repositório para o seu computador ou faça o download como arquivo ZIP.
 1.2 Para clonar este repositório:
 
-   ```bash
+```bash
    git clone https://github.com/Edmito/PE-Frontend.git
-  ´´´
+```
 ## Executando o Projeto
 
 Navegue até o diretório do projeto:
