@@ -1,4 +1,4 @@
-# Prontuário Eletrônico - Frontend
+# Prontuário Eletrônico - Front-End
 
 Este é o repositório do frontend para o Prontuário Eletrônico, uma aplicação web desenvolvida em ReactJS para gerenciamento eficiente de informações médicas. Este projeto é parte de um sistema completo de Prontuário Eletrônico, com funcionalidades para login, navegação entre páginas, proteção de rotas, cadastro, consultas entre outras funcionalidades.
 
