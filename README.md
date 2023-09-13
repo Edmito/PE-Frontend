@@ -8,7 +8,7 @@ Antes de começar, certifique-se de ter o Node.js instalado em sua máquina. Voc
 
 ## Configuração do Projeto
 
-1. Clone este repositório para o seu computador ou faça o download como arquivo ZIP.
+Clone este repositório para o seu computador ou faça o download como arquivo ZIP.
    ```bash
    git clone https://github.com/Edmito/PE-Frontend.git
    ```
