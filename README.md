@@ -1,17 +1,15 @@
 # Prontuário Eletrônico - Frontend
 
-Este é o repositório do frontend para o Prontuário Eletrônico, uma aplicação web desenvolvida em ReactJS com Vite para gerenciamento eficiente de informações médicas. Este projeto é parte de um sistema completo de Prontuário Eletrônico, com funcionalidades para login, navegação entre páginas e proteção de rotas.
+Este é o repositório do frontend para o Prontuário Eletrônico, uma aplicação web desenvolvida em ReactJS para gerenciamento eficiente de informações médicas. Este projeto é parte de um sistema completo de Prontuário Eletrônico, com funcionalidades para login, navegação entre páginas, proteção de rotas, cadastro, consultas entre outras funcionalidades.
 
 ## Pré-requisitos
 
-- Node.js
-- npm
+Antes de começar, certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo e instalá-lo a partir do [site oficial do Node.js](https://nodejs.org/).
 
-## Configuração do Ambiente
+## Configuração do Projeto
 
-Certifique-se de ter Node.js instalado em seu sistema. Para instalar as dependências do projeto, siga os passos abaixo:
-
-1. Clone este repositório:
+1. Clone este repositório para o seu computador ou faça o download como arquivo ZIP.
+1.2 Para clonar este repositório:
 
    ```bash
    git clone https://github.com/Edmito/PE-Frontend.git
