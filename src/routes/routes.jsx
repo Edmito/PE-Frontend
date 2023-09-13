@@ -9,7 +9,7 @@ const Routering = () => {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route
-        path="/home"
+        path="/home/*"
         element={
           <ProtectedRoutes>
             <Routes>
