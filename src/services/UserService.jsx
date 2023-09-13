@@ -15,7 +15,6 @@ export default class UserServices {
 
       if (data) {
         localStorage.setItem('name', data.user.firstName);
-        localStorage.setItem('email', data.user.email);
         localStorage.setItem('token', data.token);
 
         return true;
@@ -55,6 +54,5 @@ export default class UserServices {
   async logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('name');
-    localStorage.removeItem('email');
   }
 }
