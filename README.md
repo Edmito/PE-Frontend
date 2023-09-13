@@ -5,7 +5,7 @@ Este é o repositório do frontend para o Prontuário Eletrônico, uma aplicaç�
 ## Pré-requisitos
 
 - Node.js
-- npm (ou yarn)
+- npm
 
 ## Configuração do Ambiente
 
