@@ -6,7 +6,7 @@ const Header = ({ userName }) => {
   return (
     <header className="header">
       <div className="title">Prontuário Eletrônico</div>
-      <h1>Bem vindo {userName}</h1>
+      <h2>Bem vindo {userName}</h2>
       <LogoutButton /> {/* Renderize o componente de LogoutButton */}
     </header>
   );

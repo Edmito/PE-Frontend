@@ -2,33 +2,59 @@ import api from '../api';
 
 export default class UserServices {
   async login(dados) {
-    const { data } = await api.post('/login', dados);
-    console.log(data);
+    const headers = {
+      'Content-Type': 'application/json',
+    };
 
-    if (data) {
-      localStorage.setItem('name', data.User.name);
-      localStorage.setItem('email', data.User.email);
-      localStorage.setItem('token', data.token);
+    try {
+      const response = await api.post('/auth/login', JSON.stringify(dados), {
+        headers,
+      });
+      console.log('verificando o que vem da API:', response); //verificando o que vem da API
+      const { data } = response;
 
-      return true;
+      if (data) {
+        localStorage.setItem('name', data.user.firstName);
+        localStorage.setItem('email', data.user.email);
+        localStorage.setItem('token', data.token);
+
+        return true;
+      }
+
+      return;
+    } catch (error) {
+      // Lida com erros, se houver algum
+      console.error('Erro durante a solicitação de login:', error);
+      return false;
     }
-
-    return;
   }
 
   async cadastrar(dados) {
-    return api.post('/user', dados);
+    const headers = {
+      'Content-Type': 'application/json', // Define o cabeçalho Content-Type
+    };
+
+    try {
+      const response = await api.post('/paciente/add', JSON.stringify(dados), {
+        headers,
+      });
+      // Lida com a resposta, se necessário
+      return response.data;
+    } catch (error) {
+      // Lida com erros, se houver algum
+      console.error('Erro durante a solicitação de cadastro:', error);
+      return null;
+    }
   }
 
   usuarioAutenticado() {
     console.log('token:', localStorage.getItem('token'));
-    return localStorage.getItem('token') != undefined ? true : false;
-    // return typeof localStorage.getItem("token")
+    return localStorage.getItem('token') !== null; // Verifica se o token existe
   }
 
   async logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('nome');
+    localStorage.removeItem('name');
     localStorage.removeItem('email');
   }
 }
