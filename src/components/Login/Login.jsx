@@ -30,7 +30,6 @@ const Login = () => {
       setPasswordError('A senha deve conter pelo menos 6 caracteres!');
     }
 
-    // Simulação de autenticação
     if (isValidEmail(email) && password.length >= 6) {
       try {
         const res = await userServices.login({ email, password });
@@ -78,6 +77,7 @@ const Login = () => {
           type="password"
           placeholder="Sua senha"
           value={password}
+          autoComplete="new-password"
           onChange={(e) => setPassword(e.target.value)}
           onKeyUp={handleKeyPress}
         />

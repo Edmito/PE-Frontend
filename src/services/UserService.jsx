@@ -30,7 +30,7 @@ export default class UserServices {
 
   async cadastrar(dados) {
     const headers = {
-      'Content-Type': 'application/json', // Define o cabeçalho Content-Type
+      'Content-Type': 'application/json',
     };
 
     try {
@@ -38,16 +38,16 @@ export default class UserServices {
         headers,
       });
       // Lida com a resposta, se necessário
-      return response.data;
+      return response;
     } catch (error) {
       // Lida com erros, se houver algum
       console.error('Erro durante a solicitação de cadastro:', error);
-      return null;
+      return error;
     }
   }
 
   usuarioAutenticado() {
-    console.log('token:', localStorage.getItem('token'));
+    console.log('token:', localStorage.getItem('token')); // Verificando se retorna o token
     return localStorage.getItem('token') !== null; // Verifica se o token existe
   }
 

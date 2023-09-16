@@ -1,0 +1,109 @@
+/* Estilos para o contêiner principal */
+.cadastrar-paciente {
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o título */
+.cadastrar-paciente h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para os campos de formulário e legendas */
+fieldset {
+  background-color: #d3d3d3;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap; /* Permita que os campos quebrem para a próxima linha */
+  justify-content: flex-start; /* Espaço entre as colunas */
+  align-content: flex-start;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 24px;
+  width: 100%;
+}
+
+/* Estilos para os campos de formulário e rótulos */
+.form-group {
+  margin-bottom: 1rem;
+  flex: content;
+  min-width: calc(30%); /* Largura mínima de cada coluna com espaço entre elas */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"], 
+input[type="date"] {
+  width: 320px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+/* Estilos para mensagens de erro */
+.error {
+  width: 332px;
+  color: #fff;
+  background-color: #ff8080; /* Vermelho claro */
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Estilos para o botão de envio */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Media query para tornar o formulário responsivo */
+@media screen and (max-width: 768px) {
+  fieldset {
+    flex-direction: column;
+  }
+
+  .form-group {
+    max-width: 240px
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"], 
+  input[type="date"] {
+    width: 210px;
+  }
+
+  .error {
+    width: 222px;
+  }
+}

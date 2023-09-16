@@ -1,29 +1,29 @@
 /* Estilos para o conteúdo principal */
-.home-container {
+.conteiner-cadastro-paciente {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.content {
+.content-cadastro {
   display: flex;
   flex: 1;
 }
 
-.home {
+main {
   flex: 1;
   padding: 20px;
 }
 
 /* Estilos para tornar responsivo */
 @media screen and (max-width: 768px) {
-  .content {
+  .content-cadastro {
     display: flex;
     flex-direction: row;
     flex: 1;
   }
 
-  .home {
+  main {
     flex: 1;
     padding: 20px;
   }
