@@ -31,15 +31,17 @@ fieldset {
 }
 
 legend {
+  background-color: aliceblue;
   font-weight: bold;
   font-size: 24px;
-  width: 100%;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 
 /* Estilos para os campos de formulário e rótulos */
 .form-group {
   margin-bottom: 1rem;
-  flex: content;
+  margin-right: 1rem;
   min-width: calc(30%); /* Largura mínima de cada coluna com espaço entre elas */
 }
 
@@ -73,12 +75,13 @@ input[type="date"] {
 
 /* Estilos para o botão de envio */
 button[type="submit"] {
+  margin-left: 2px;
   background-color: #007bff;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
 }
 
