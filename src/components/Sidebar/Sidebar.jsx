@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import {
   FaHome,
   FaUser,
   FaCalendar,
   FaFile,
-  FaMedkit,
+  FaUsersCog,
   FaCog,
 } from 'react-icons/fa';
 import './sidebar.css';
@@ -25,34 +27,34 @@ const Sidebar = () => {
       <nav>
         <ul className="nav-list">
           <li>
-            <a href="/home">
+            <Link to="/home">
               <FaHome /> {minimized ? null : 'Home'}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/paciente/cadastrar">
+            <Link to="/paciente">
               <FaUser /> {minimized ? null : 'Pacientes'}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/consultas">
+            <Link to="/consultas">
               <FaCalendar /> {minimized ? null : 'Consultas'}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/relatorios">
+            <Link to="/relatorios">
               <FaFile /> {minimized ? null : 'Relatórios'}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/medicamentos">
-              <FaMedkit /> {minimized ? null : 'Medicamentos'}
-            </a>
+            <Link to="/colaboradores">
+              <FaUsersCog /> {minimized ? null : 'Colaboradores'}
+            </Link>
           </li>
           <li>
-            <a href="/configuracoes">
+            <Link to="/configuracoes">
               <FaCog /> {minimized ? null : 'Configurações'}
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
