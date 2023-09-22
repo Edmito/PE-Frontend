@@ -1,15 +1,17 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import ProtectedRoutes from './ProtectedRoute';
+
 import Login from '../components/Login/Login';
 import Home from '../pages/Home/Home';
-import ProtectedRoutes from './ProtectedRoute';
 import Pacientes from '../pages/Pacientes/PacientesIndex';
-import PacienteCadastro from '../pages/Pacientes/PacienteCadastro';
-import AtualizarPaciente from '../pages/Pacientes/AtualizarPaciente';
-import AtestadoCadastro from '../pages/Pacientes/AtestadoCadastro';
-import LaudoCadastro from '../pages/Pacientes/LaudoCadastro';
-import AtestadoAtualizar from '../pages/Pacientes/AtestadoAtualizar';
-import LaudoAtualizar from '../pages/Pacientes/LaudoAtualizar';
+import PacienteCadastro from '../pages/Pacientes/Cadastro/PacienteCadastro';
+import AtualizarPaciente from '../pages/Pacientes/UpdatePaciente/AtualizarPaciente';
+import AtestadoCadastro from '../pages/Pacientes/Atestados/AtestadoCadastro';
+import LaudoCadastro from '../pages/Pacientes/Laudos/LaudoCadastro';
+import AtestadoAtualizar from '../pages/Pacientes/Atestados/AtestadoAtualizar';
+import LaudoAtualizar from '../pages/Pacientes/Laudos/LaudoAtualizar';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
