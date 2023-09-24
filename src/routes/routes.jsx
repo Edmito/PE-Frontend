@@ -22,43 +22,32 @@ const Routering = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route
-          path="/*"
+          path="/home"
           element={
             <ProtectedRoutes>
-              <Routes>
-                <Route path="/home/*" element={<Home />} />
-
-                <Route
-                  path="/paciente/*"
-                  element={
-                    <Routes>
-                      <Route index element={<Pacientes />} />
-                      <Route path="cadastrar" element={<PacienteCadastro />} />
-                      <Route
-                        path="update/:pacienteId"
-                        element={<AtualizarPaciente />}
-                      />
-                      <Route path="atestados">
-                        <Route index element={<AtestadoCadastro />} />
-                        <Route
-                          path="update/:atestadoId"
-                          element={<AtestadoAtualizar />}
-                        />
-                      </Route>
-                      <Route path="laudos">
-                        <Route index element={<LaudoCadastro />} />
-                        <Route
-                          path="update/:laudoId"
-                          element={<LaudoAtualizar />}
-                        />
-                      </Route>
-                    </Routes>
-                  }
-                />
-              </Routes>
+              <Home />
             </ProtectedRoutes>
           }
         />
+        <Route path="/paciente/">
+          <Route
+            index
+            element={
+              <ProtectedRoutes>
+                <Pacientes />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="new"
+            element={
+              <ProtectedRoutes>
+                <PacienteCadastro />
+              </ProtectedRoutes>
+            }
+          />
+        </Route>
+
         <Route path="/*" element={<Navigate to="/home" />} />
       </Routes>
     </>

@@ -1,0 +1,30 @@
+/* Estilos para o conteúdo principal */
+.container-pacientes {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-pacientes {
+  display: flex;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Estilos para tornar responsivo */
+@media screen and (max-width: 768px) {
+  .content-pacientes {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  main {
+    flex: 1;
+    padding: 20px;
+  }
+}

@@ -46,6 +46,24 @@ export default class UserServices {
     }
   }
 
+  async listar() {
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+      const response = await api.get('/paciente/all', {
+        headers,
+      });
+      // Lida com a resposta, se necessário
+      return response;
+    } catch (error) {
+      // Lida com erros, se houver algum
+      console.error('Erro durante a solicitação de lista de Pacientes:', error);
+      return error;
+    }
+  }
+
   usuarioAutenticado() {
     console.log('token:', localStorage.getItem('token')); // Verificando se retorna o token
     return localStorage.getItem('token') !== null; // Verifica se o token existe
