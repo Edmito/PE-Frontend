@@ -12,11 +12,10 @@ const Pacientes = () => {
   const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
-    // Use a função listar do serviço UserServices para buscar a lista de pacientes da API
     userServices
       .listar()
       .then((response) => {
-        // Verifique se a resposta da API contém a lista de pacientes
+        // Verificando se a resposta da API contém a lista de pacientes
         if (response.data) {
           console.log(response.data);
           setPacientes(response.data);

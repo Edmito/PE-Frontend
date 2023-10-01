@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import UserServices from '../../services/UserService';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
+import InputMask from 'react-input-mask';
+import estados from '../../utils/estados';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './CadastrarCliente.css';
@@ -39,6 +41,17 @@ const CadastrarCliente = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Converte todos os campos de texto para letras maiúsculas
+    const formDataUpperCase = {
+      ...formData,
+      firstName: formData.firstName.toUpperCase(),
+      lastName: formData.lastName.toUpperCase(),
+      endereco: formData.endereco.toUpperCase(),
+      bairro: formData.bairro.toUpperCase(),
+      cidade: formData.cidade.toUpperCase(),
+      estado: formData.estado.toUpperCase(),
+    };
+
     const formattedDataNascimento = `${formData.dataNascimento}T00:00:00.000Z`;
 
     const schema = Yup.object().shape({
@@ -63,13 +76,13 @@ const CadastrarCliente = () => {
     try {
       // Valida os dados do formulário com base no esquema
       await schema.validate(
-        { ...formData, dataNascimento: formattedDataNascimento },
+        { ...formDataUpperCase, dataNascimento: formattedDataNascimento },
         { abortEarly: false },
       );
 
       // Envie os dados para a API
       const response = await userServices.cadastrar({
-        ...formData,
+        ...formDataUpperCase,
         dataNascimento: formattedDataNascimento,
       });
 
@@ -89,7 +102,7 @@ const CadastrarCliente = () => {
 
         // Agendando o redirecionamento
         setTimeout(() => {
-          navigate('/home');
+          navigate('/paciente');
         }, 3000);
       } else {
         // Exibe uma mensagem de erro usando toastify
@@ -148,9 +161,11 @@ const CadastrarCliente = () => {
           </div>
           <div className="form-group">
             <label htmlFor="cpf">CPF:</label>
-            <input
+            <InputMask
               type="text"
               name="cpf"
+              mask="999.999.999-99"
+              maskChar=" "
               value={formData.cpf}
               onChange={handleChange}
             />
@@ -168,9 +183,11 @@ const CadastrarCliente = () => {
           </div>
           <div className="form-group">
             <label htmlFor="cns">CNS:</label>
-            <input
+            <InputMask
               type="text"
               name="cns"
+              mask="999.9999.9999.9999"
+              maskChar=" "
               value={formData.cns}
               onChange={handleChange}
             />
@@ -236,12 +253,19 @@ const CadastrarCliente = () => {
           </div>
           <div className="form-group">
             <label htmlFor="estado">Estado:</label>
-            <input
-              type="text"
+            <select
               name="estado"
+              id="estado"
               value={formData.estado}
               onChange={handleChange}
-            />
+            >
+              <option value="">Selecione um estado</option>
+              {estados.map((estado) => (
+                <option key={estado.value} value={estado.value}>
+                  {estado.label}
+                </option>
+              ))}
+            </select>
             {errors.estado && <p className="error">{errors.estado}</p>}
           </div>
         </fieldset>
@@ -274,10 +298,11 @@ const CadastrarCliente = () => {
           </div>
           <div className="form-group">
             <label htmlFor="telefone">Telefone:</label>
-            <input
+            <InputMask
               type="text"
               name="telefone"
-              id="telefone"
+              mask="(99) 99999-9999"
+              maskChar=" "
               value={formData.telefone}
               onChange={handleChange}
             />

@@ -3,6 +3,19 @@ import { Link } from 'react-router-dom';
 import './UserList.css';
 
 const PacientesList = ({ pacientes }) => {
+  const formatarDataNascimento = (dataNascimentoString) => {
+    const dataNascimento = new Date(dataNascimentoString);
+    const dia = dataNascimento.getDate().toString().padStart(2, '0');
+    const mes = (dataNascimento.getMonth() + 1).toString().padStart(2, '0'); // Meses começam do zero
+    const ano = dataNascimento.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  };
+
+  const capitalizarTexto = (texto) => {
+    // Converte a primeira letra para maiúscula e o restante para minúscula
+    return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
+  };
+
   return (
     <div className="pacientes-list">
       <div className="titleTable">
@@ -11,35 +24,35 @@ const PacientesList = ({ pacientes }) => {
           Adicionar Novo Paciente
         </Link>
       </div>
-
-      <table>
+    <div className="table-container">
+      <table className="styled-table">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nome</th>
-            <th>Sobrenome</th>
+            <th>NOME</th>
+            <th>SOBRENOME</th>
             <th>CPF</th>
-            <th>Data Nascimento</th>
-            <th>Ações</th>
+            <th>DATA NASC.</th>
+            <th>AÇÕES</th>
           </tr>
         </thead>
         <tbody>
           {pacientes.map((paciente) => (
             <tr key={paciente.id}>
               <td>{paciente.id}</td>
-              <td>{paciente.firstName}</td>
-              <td>{paciente.lastName}</td>
+              <td>{capitalizarTexto(paciente.firstName)}</td>
+              <td>{capitalizarTexto(paciente.lastName)}</td>
               <td>{paciente.cpf}</td>
-              <td>{paciente.dataNascimento}</td>
+              <td>{formatarDataNascimento(paciente.dataNascimento)}</td>
               <td>
-                {/* Adicione botões de ação aqui, como editar e excluir */}
-                <button>Editar</button>
-                <button>Excluir</button>
+                <button className="btn-edit">Editar</button>
+                <button className="btn-delete">Excluir</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

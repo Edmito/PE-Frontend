@@ -3,7 +3,7 @@
   width: 240px;
   top: 0;
   transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  background-color: darkblue;
+  background-color: #d3d3d3;
   overflow: auto;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -31,7 +31,7 @@
 
 .nav-list a {
   text-decoration: none;
-  color: #fff;
+  color: #406e9b;
   display: flex;
   align-items: center;
   padding: 10px 10px 10px 10px;
@@ -53,12 +53,19 @@
 /* Estilos para tornar responsivo */
 @media screen and (max-width: 768px) {
   .sidebar.minimized {
-    width: 72px;
+    width: 62px;
+  }
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
+  .nav-list li {
+    padding: 0px 0px 0px 12px;
+}
   .nav-list a svg {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
+    width: 22px;
+    height: 22px;
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import UserServices from '../../services/UserService';
 import { useNavigate } from 'react-router-dom';
-import './LogoutBotton.css'
+import { FaSignOutAlt } from 'react-icons/fa';
+import './LogoutBotton.css';
 
 const LogoutButton = () => {
   const userService = new UserServices();
@@ -14,7 +15,7 @@ const LogoutButton = () => {
 
   return (
     <button className="logout-button" onClick={handleLogout}>
-      Sair
+      <FaSignOutAlt /> Sair
     </button>
   );
 };

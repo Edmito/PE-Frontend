@@ -1,13 +1,13 @@
 import React from 'react';
-import LogoutButton from '../LogoutButton/LogoutBotton'; // Importe o componente de LogoutButton
-import './Header.css'
+import LogoutButton from '../LogoutButton/LogoutBotton';
+import './Header.css';
 
-const Header = ({ userName }) => {
+const Header = ({ userName, showWelcomeMessage = false }) => {
   return (
     <header className="header">
-      <div className="title">Prontuário Eletrônico</div>
-      <h2>Bem vindo {userName}</h2>
-      <LogoutButton /> {/* Renderize o componente de LogoutButton */}
+      <div className="title">Premaap</div>
+      {showWelcomeMessage && <h2>Bem vindo {userName}</h2>}
+      <LogoutButton />
     </header>
   );
 };

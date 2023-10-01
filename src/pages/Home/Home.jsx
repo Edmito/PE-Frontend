@@ -4,12 +4,13 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import Footer from '../../components/Footer/Footer';
 import './Home.css';
 
-
-
 const Home = () => {
   return (
     <div className="home-container">
-      <Header userName={localStorage.getItem('name')} />
+      <Header
+        userName={localStorage.getItem('name')}
+        showWelcomeMessage={true}
+      />
       <div className="content">
         <Sidebar />
         <div className="home">
@@ -26,9 +27,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-
-
-

@@ -1,6 +1,6 @@
-/* Estilos para o Header */
+/* Estilos padrão para o cabeçalho */
 .header {
-  background-color: #333;
+  background-color: #007bff;
   color: #fff;
   padding: 10px;
   display: flex;
@@ -8,21 +8,23 @@
   align-items: center;
 }
 
-.header h2 {
-  margin: 0;
+.title {
+  font-size: 24px;
 }
 
-.logout-button {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
+h2 {
+  font-size: 18px;
+  margin-right: 10px;
 }
 
-/* Estilos para tornar responsivo */
+/* Estilos para tornar o cabeçalho responsivo em telas menores */
 @media screen and (max-width: 768px) {
-  .header h1 {
+  .title {
     font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 10px 0;
   }
 }

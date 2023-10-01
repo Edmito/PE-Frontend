@@ -3,7 +3,7 @@
   margin-top: 20px;
 }
 
-.titleTable{
+.titleTable {
   width: 100%;
   font-size: 18px;
   color: gray;
@@ -13,29 +13,46 @@
   justify-content: space-between;
 }
 
-.link{
-    text-decoration: none;
-    margin-left: 2px;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-  }
+.link {
+  text-decoration: none;
+  margin-left: 2px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
 
 .link:hover {
   background-color: #0056b3;
 }
 
-table {
+/* Estilos para o contêiner da tabela */
+.table-container {
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table {
   width: 100%;
   border-collapse: collapse;
+  background-color: gainsboro;
 }
 
 table, th, td {
-  border: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+
+tr:last-of-type {
+  border-bottom: 3px solid #406e9b;
+}
+
+th {
+  background-color: #406e9b;
+  color: white;
 }
 
 th, td {
@@ -43,17 +60,72 @@ th, td {
   text-align: left;
 }
 
-th {
-  background-color: #f2f2f2;
+tr:hover {
+  background-color: azure;
+}
+
+/* Estilos para os botões de editar e excluir */
+.btn-edit {
+  width: 64px !important;
+  background-color: #88b479;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  background-color: #618c54;
+}
+
+.btn-delete {
+  width: 64px !important;
+  background-color: #fe4f30;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #fd2513;
 }
 
 /* Estilos para tornar a tabela responsiva */
 @media screen and (max-width: 768px) {
   table {
-    font-size: 14px;
+    width: 100%;
+    font-size: 8px;
   }
-  
+
   th, td {
-    padding: 8px;
+    padding: 5px;
+  }
+
+  .titleTable {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .titleTable h2 {
+    font-size: 16px;
+  }
+
+  .link {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .btn-edit, .btn-delete {
+    font-size: 10px;
+    width: 50px !important;
   }
 }

@@ -61,6 +61,26 @@ input[type="date"] {
   border-radius: 5px;
   font-size: 16px;
 }
+
+/* Estilos para o campo de seleção */
+select {
+  width: 340px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
 /* Estilos para mensagens de erro */
 .error {
   width: 332px;
@@ -104,6 +124,10 @@ button[type="submit"]:hover {
   input[type="password"], 
   input[type="date"] {
     width: 210px;
+  }
+
+  select {
+    width: 230px;
   }
 
   .error {
