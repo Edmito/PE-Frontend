@@ -24,7 +24,7 @@ const CadastrarCliente = () => {
     bairro: '',
     cidade: '',
     estado: '',
-    dataNascimento: '',
+    dataNascimento: new Date(),
   });
 
   const userServices = new UserServices();
@@ -75,10 +75,7 @@ const CadastrarCliente = () => {
 
     try {
       // Valida os dados do formulário com base no esquema
-      await schema.validate(
-        { ...formDataUpperCase, dataNascimento: formattedDataNascimento },
-        { abortEarly: false },
-      );
+      await schema.validate({ ...formDataUpperCase }, { abortEarly: false });
 
       // Envie os dados para a API
       const response = await userServices.cadastrar({
